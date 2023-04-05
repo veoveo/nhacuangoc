@@ -128,7 +128,7 @@
   async function check_oder() {
     document.getElementById('loading').style.display = 'block';
 	const jsonData = {};
-	jsonData["oderid"] = document.getElementById("order_id").value;
+	jsonData["oderid"] = document.getElementById("order_id").value.replaceAll(" ","");
 
 	const data = JSON.stringify(jsonData);
 

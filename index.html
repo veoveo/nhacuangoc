@@ -91,10 +91,10 @@
 }; 
 	  
   async function add() {
-    document.getElementById('loading').style.display = 'block';
-	
+	const regex = /https?:\/\/[^\s]+/g;
 	const jsonData = {};
-	jsonData["url"] = document.getElementById("spc_ec").value.replace(/\?.*/, "");
+	jsonData["url"] = document.getElementById("spc_ec").value.match(regex)[0].replace(/\?.*/, "");
+	document.getElementById('loading').style.display = 'block';
 
 	const data = JSON.stringify(jsonData);
 

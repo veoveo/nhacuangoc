@@ -123,11 +123,11 @@
   async function check_oder() {
     document.getElementById('loading').style.display = 'block';
 	const jsonData = {};
-	jsonData["oderid"] = document.getElementById("order_id").value.replaceAll(" ","");
+	jsonData["oders"] = document.getElementById("order_id").value.replaceAll(" ","");
 
 	const data = JSON.stringify(jsonData);
 
-	const url = "http://103.169.34.97:5000/checkoder";
+	const url = "https://flask-hello-sooty.vercel.app/checkoder";
 
 	$.ajax({
 	  url: url,

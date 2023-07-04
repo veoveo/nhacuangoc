@@ -136,28 +136,7 @@
 	  success: function(response) {
 		// Xử lý phản hồi từ máy chủ
 		document.getElementById('loading').style.display = 'none';
-		if (response["err"]==1) {
-			document.getElementById('err1').style.display = 'block';
-			var oder_id = document.getElementById("oder");
-			oder_id.innerHTML = "Đơn hàng: "+response["oder_id"];
-		} else {
-		console.log(response["conversion_status"]);
-		if (response["conversion_status"]==1) {
-			// đơn đang xử lý
-			document.getElementById('err2').style.display = 'block';
-			var oder_id = document.getElementById("oder1");
-			oder_id.innerHTML = "Đơn hàng: "+response["oder_id"];
-		} else if (response["conversion_status"]==2) {
-			// đơn hoàn thành
-			document.getElementById('err3').style.display = 'block';
-			document.getElementById("oder2").innerHTML = "Đơn hàng: "+response["oder_id"];
-			document.getElementById("oder_time").innerHTML = "("+response["checkout_complete_time"]+")";
-		} else {
-			// đơn đã hủy
-			document.getElementById('err4').style.display = 'block';
-			var oder_id = document.getElementById("oder3");
-			oder_id.innerHTML = "Đơn hàng: "+response["oder_id"];
-		}
+
 		
 		}
 
